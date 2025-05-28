@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediksi Kemenangan Sepak Bola</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Prediksi Kemenangan Laga</h2>
+        <form method="POST" action="/predict">
+            <label>Menang dari 5 Laga Terakhir:</label>
+            <input type="number" name="jumlah_menang" min="0" max="5" required>
+
+            <label>Posisi di Klasemen Liga (1–20):</label>
+            <input type="number" name="posisi_klasemen" min="1" max="20" required>
+
+            <label>Total Kebobolan dalam 5 Laga:</label>
+            <input type="number" name="kebobolan" min="0" required>
+
+            <label>Main di:</label>
+            <select name="tempat_main">
+                <option value="home">Kandang</option>
+                <option value="away">Tandang</option>
+            </select>
+
+            <input type="submit" value="Prediksi">
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            <h3>Probabilitas Menang: {{ prediction }}%</h3>
+            <input type="range" min="0" max="100" value="{{ prediction }}" disabled>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 ## Prediksi Kemenangan Laga Tim Sepakbola
 Program ini bisa menghitung presentase kemenangan dari tim sepakbola yang akan berlaga, 
-program ini menggunakan algoritma Support Vector Machine untuk menghitung prediksinya. 
+program ini menggunakan algoritma Support Vector Machine (SVM) untuk menghitung prediksinya. 
+Yang dimana SVM dilatih dengan dataset dengan nama file data.csv dan akan mengenali data baru yang dimasukkan oleh pengguna.
 
 Adapun masukkan yang harus diisi pengguna antara lain:
 

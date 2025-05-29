@@ -4,7 +4,7 @@ from sklearn.svm import SVC
 import joblib
 
 df = pd.read_csv('data.csv')
-X = df[['jumlah_menang', 'posisi_klasemen', 'kebobolan', 'tempat_main']]
+X = df[['jumlah_menang', 'posisi_klasemen', 'selisih_gol', 'tempat_main']]
 y = df['result']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

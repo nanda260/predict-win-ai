@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import joblib
 import numpy as np
+import os
 
 app = Flask(__name__)
 model = joblib.load('model.pkl')
@@ -38,4 +39,5 @@ def predict():
     return render_template('index.html', prediction_a=norm_prob_a, prediction_b=norm_prob_b)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

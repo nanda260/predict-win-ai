@@ -12,7 +12,7 @@ Adapun masukkan yang harus diisi pengguna antara lain:
 
 1. Jumlah kemenangan di 5 laga terakhir,
 2. Posisi di klasemen liga,
-3. Total kebobolan dalam 5 laga, dan
+3. Selisih gol pada liga, dan
 4. Bermain di kandang atau tandang.
    
 Tools yang digunakan adalah pemrograman html, css, bahasa python sebagai backend dan pemrosesan teknik AI Learning (SVM).

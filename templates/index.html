@@ -1,37 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prediksi Kemenangan Sepak Bola</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
 </head>
+
 <body>
     <div class="container">
-        <h2>Prediksi Kemenangan Laga</h2>
+        <h2>Prediksi Kemenangan Laga Sepakbola</h2>
         <form method="POST" action="/predict">
-            <label>Menang dari 5 Laga Terakhir:</label>
-            <input type="number" name="jumlah_menang" min="0" max="5" required>
+            <div class="teams-container">
+                <div class="team-box">
+                    <h3>Tim A</h3>
+                    <label>Menang dari 5 Laga Terakhir:</label>
+                    <input type="number" name="a_jumlah_menang" min="0" max="5" required>
+                    <label>Posisi di Klasemen Liga (1–20):</label>
+                    <input type="number" name="a_posisi_klasemen" min="1" max="20" required>
+                    <label>Total Kebobolan:</label>
+                    <input type="number" name="a_kebobolan" min="0" required>
+                    <label>Main di:</label>
+                    <select name="a_tempat_main">
+                        <option value="home">Kandang</option>
+                    </select>
+                </div>
 
-            <label>Posisi di Klasemen Liga (1–20):</label>
-            <input type="number" name="posisi_klasemen" min="1" max="20" required>
-
-            <label>Total Kebobolan dalam 5 Laga:</label>
-            <input type="number" name="kebobolan" min="0" required>
-
-            <label>Main di:</label>
-            <select name="tempat_main">
-                <option value="home">Kandang</option>
-                <option value="away">Tandang</option>
-            </select>
+                <div class="team-box">
+                    <h3>Tim B</h3>
+                    <label>Menang dari 5 Laga Terakhir:</label>
+                    <input type="number" name="b_jumlah_menang" min="0" max="5" required>
+                    <label>Posisi di Klasemen Liga (1–20):</label>
+                    <input type="number" name="b_posisi_klasemen" min="1" max="20" required>
+                    <label>Total Kebobolan:</label>
+                    <input type="number" name="b_kebobolan" min="0" required>
+                    <label>Main di:</label>
+                    <select name="b_tempat_main">
+                        <option value="away">Tandang</option>
+                    </select>
+                </div>
+            </div>
 
             <input type="submit" value="Prediksi">
         </form>
 
-        {% if prediction is not none %}
+        {% if prediction_a is not none and prediction_b is not none %}
         <div class="result">
-            <h3>Probabilitas Menang: {{ prediction }}%</h3>
-            <input type="range" min="0" max="100" value="{{ prediction }}" disabled>
+            <h3>Probabilitas Menang Tim A: {{ prediction_a }}%</h3>
+            <input type="range" class="range-team-a" min="0" max="100" value="{{ prediction_a }}" >
+
+            <h3>Probabilitas Menang Tim B: {{ prediction_b }}%</h3>
+            <input type="range" class="range-team-b"  min="0" max="100" value="{{ prediction_b }}" >
         </div>
         {% endif %}
     </div>
+    
+    <footer>
+        &copy; 2025. Developed by <span style="font-weight: 600;">Romadhoni Kusuma.</span> <br>
+        Powered by Support Vector Machine.
+    </footer>
 </body>
+
 </html>

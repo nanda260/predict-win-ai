@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import joblib
 import numpy as np
-import os
 
 app = Flask(__name__)
 model = joblib.load('model.pkl')
@@ -12,17 +11,31 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    win_count = int(request.form['jumlah_menang'])
-    position = int(request.form['posisi_klasemen'])
-    goals_conceded = int(request.form['kebobolan'])
-    is_home = 1 if request.form['tempat_main'] == 'home' else 0
+    #Tim A
+    a_win = int(request.form['a_jumlah_menang'])
+    a_pos = int(request.form['a_posisi_klasemen'])
+    a_kebobolan = int(request.form['a_kebobolan'])
+    a_home = 1 if request.form['a_tempat_main'] == 'home' else 0
 
-    features = np.array([[win_count, position, goals_conceded, is_home]])
-    prob = model.predict_proba(features)[0][1]
-    prob_percent = round(prob * 100, 2)
+    #Tim B
+    b_win = int(request.form['b_jumlah_menang'])
+    b_pos = int(request.form['b_posisi_klasemen'])
+    b_kebobolan = int(request.form['b_kebobolan'])
+    b_home = 1 if request.form['b_tempat_main'] == 'home' else 0
 
-    return render_template('index.html', prediction=prob_percent)
+    #Prediksi
+    features_a = np.array([[a_win, a_pos, a_kebobolan, a_home]])
+    features_b = np.array([[b_win, b_pos, b_kebobolan, b_home]])
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    raw_prob_a = model.predict_proba(features_a)[0][1]
+    raw_prob_b = model.predict_proba(features_b)[0][1]
+
+    #Hitung probabilitas
+    total = raw_prob_a + raw_prob_b
+    norm_prob_a = round((raw_prob_a / total) * 100, 2)
+    norm_prob_b = round((raw_prob_b / total) * 100, 2)
+
+    return render_template('index.html', prediction_a=norm_prob_a, prediction_b=norm_prob_b)
+
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,73 +1,179 @@
 @import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Bebas+Neue&family=Cal+Sans&family=Figtree:ital,wght@0,300..900;1,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap');
 
 body {
-    background-color: #f2f2f2;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    width: 450px;
+    width: 800px;
     margin: 6.5vh auto;
-    background-color: #fff;
+    background: rgba(255, 255, 255, 0.563);
     padding: 30px;
     border-radius: 10px;
+    box-sizing: border-box;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.teams-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.team-box {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.103);
+    padding: 30px;
+    box-sizing: border-box;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.team-box h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
 }
 
 input,
 select {
-    padding: 8px;
+    padding: 12px;
     margin: 10px 0;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #bababa;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: transparent;
 }
 
-input {
-    width: 95%;
-}
-
-input[type=range] {
-    -webkit-appearance: none;
-    width: 95%;
-    height: 1px;
-    background: #28a74641;
-    border-radius: 5px;
-    outline: none;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #28a745;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #fff;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5);
-}
 
 input[type="submit"] {
     width: 100%;
-    height: 45px;
+    height: 50px;
     font-weight: bold;
     color: white;
     background-color: #28a745;
     border: 1px solid #28a745;
     border-radius: 5px;
     transition: ease-in-out 0.2s;
-    &:hover {
-        color: #28a745;
-        background-color: transparent;
-    }
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: zoom-in;
 }
 
-select {
-    width: 100%;
+input[type="submit"]:hover {
+    color: #28a745;
+    background-color: transparent;
 }
 
 .result {
     margin-top: 20px;
-    padding: 10px;
-    background-color: #e3fcef;
+    padding: 15px;
     border-left: 5px solid #28a745;
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.103);
+    padding: 30px;
+    box-sizing: border-box;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    h3 {
+        margin-bottom: -15px;
+    }
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+    background: rgba(255, 255, 255, 0.188);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    i {
+        color: black;
+        padding: 10px;
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .teams-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .team-box {
+        padding: 15px;
+    }
+
+    input,
+    select {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    input[type="submit"] {
+        height: 45px;
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .result {
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    input,
+    select {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    input[type="submit"] {
+        height: 42px;
+    }
+
+    .team-box {
+        padding: 12px;
+    }
 }

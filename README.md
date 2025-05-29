@@ -14,7 +14,7 @@ Adapun masukkan yang harus diisi pengguna antara lain:
 3. Total kebobolan dalam 5 laga, dan
 4. Bermain di kandang atau tandang.
    
-Tools yang digunakan adalah pemrograman html, css, dan bahasa python sebagai backend-nya.
+Tools yang digunakan adalah pemrograman html, css, bahasa python sebagai backend dan pemrosesan teknik AI Learning (SVM).
 
 
 

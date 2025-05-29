@@ -4,7 +4,8 @@ program ini menggunakan algoritma Support Vector Machine (SVM) untuk menghitung 
 Yang dimana SVM dilatih dengan dataset dengan nama file data.csv dan akan mengenali data baru yang dimasukkan oleh pengguna dengan melakukan klasifikasi, setelah diketahui antara 0-1, nantinya dikoncersi ke presentase untuk tampilan prediksi yang lebih jelas.
 
 
-![image](https://github.com/user-attachments/assets/f8b8e8cd-ca23-48ad-a757-6074843e14c4)
+![image](https://github.com/user-attachments/assets/f018c3df-f76f-4078-9416-025d70e30d74)
+
 
 
 Adapun masukkan yang harus diisi pengguna antara lain:

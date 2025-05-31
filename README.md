@@ -18,7 +18,7 @@ Adapun masukkan yang harus diisi pengguna antara lain:
 Tools yang digunakan adalah pemrograman html, css, bahasa python sebagai backend dan pemrosesan teknik AI Learning (SVM).
 
 
-### Link Demo Website
+### Link Demo
 [Menuju Website](https://predict-match.up.railway.app/)
 
 ## Cara Instalasi

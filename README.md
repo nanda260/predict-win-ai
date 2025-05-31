@@ -18,7 +18,7 @@ Adapun masukkan yang harus diisi pengguna antara lain:
 Tools yang digunakan adalah pemrograman html, css, bahasa python sebagai backend dan pemrosesan teknik AI Learning (SVM).
 
 
-### Link Demo
+## Link Demo
 [Menuju Website](https://predict-match.up.railway.app/)
 
 ## Cara Instalasi
@@ -30,7 +30,7 @@ git clone https://github.com/nanda260/predict-win-ai.git
 cd predict-win-ai
 ```
 
-### 2. Buat dan Aktifkan Virtual Environment (Opsional tapi disarankan)
+### 2. Buat dan Aktifkan Virtual Environment
 
 **Windows**
 

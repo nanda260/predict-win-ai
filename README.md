@@ -20,6 +20,49 @@ Tools yang digunakan adalah pemrograman html, css, bahasa python sebagai backend
 
 
 
+## Cara Instalasi dan Menjalankan Aplikasi
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/nanda260/predict-win-ai.git
+cd predict-win-ai
+```
+
+### 2. Buat dan Aktifkan Virtual Environment (Opsional tapi disarankan)
+
+**Windows**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**Mac/Linux**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Jalankan Aplikasi
+
+```bash
+python app.py
+```
+
+### 5. Akses di Browser
+
+Buka browser dan akses:
+```
+http://127.0.0.1:5000/
+```
 
 
 
